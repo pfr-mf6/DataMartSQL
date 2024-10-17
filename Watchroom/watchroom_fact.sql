@@ -68,6 +68,7 @@ INNER JOIN [Elite_DWPortland].[DwEms].[Dim_Response]
 INNER JOIN [Elite_DWPortland].[DwEms].[Dim_Disposition]
     ON Fact_Incident.Dim_Disposition_FK = Dim_Disposition.Dim_Disposition_PK
 WHERE Fact_Incident.CreatedOn >= '2024-08-19'
+AND Fact_Incident.Incident_Agency_Short_Name = 'portlandfi'
 AND Dim_Response.Response_EMS_Unit_Call_Sign NOT LIKE 'CHAT%'
 AND Dim_Response.Response_EMS_Unit_Call_Sign NOT LIKE 'PSR%'
 AND Dim_Response.Response_EMS_Unit_Call_Sign NOT LIKE 'CHS%'
@@ -126,4 +127,4 @@ INNER JOIN [Elite_DWPortland].[DwFire].[Dim_Basic]
 INNER JOIN [Elite_DWPortland].[DwFire].[Dim_Fire] 
     ON Fact_Fire.Dim_Fire_FK = Dim_Fire.Dim_Fire_PK
 WHERE Fact_Fire.CreatedOn >= '2024-08-19'
-AND Fact_Fire.Agency_Shortname = 'portlandfi';
+AND Fact_Fire.Agency_shortname = 'portlandfi';
