@@ -1,0 +1,17 @@
+Report Criteria
+Cad Response Ems Unit Call Sign:
+Is Equal To R11
+Cad Response Ems Unit Call Sign:
+Is Equal To E11
+Cad Response Ems Unit Call Sign:
+Is Equal To PSR1
+Cad Emd Card Number (Ecad.33):
+Contains Any AB9,ACCUNK,AED,AL3,AL9,AN3,AN9,ANRESC,AS1,AS3,AS9,BE3,BE9,BK3,BK9,BL3,BR1,BR9,BU3,BU9,CH1,CH9,CPR,DI3,DI9,DR1,DR9,EL1,EL9,EY3,EY9,HC1,HC9,HE3,HE9,JUMP,LIFT,MCI,MUTUAL,OB1,OB3,OB9,OD1,OD3,OD9,POLREQ,PUBAST,SK1,SK9,ST3,ST9,SZ3,SZ9,TA1,TA1MAX,TA1P ,TA1PED,TA1R,TA9,TR1,TR1P,TR3,TR9,TZ3,TZ9,UK3,UN1,UN3,UN9,VFIRE,WATRES,WMD
+Incident Emd Card Number (Edispatch.03):
+Contains Any 1, 2, 3, 4, 5, 6, 7, 33C, 33CTH, 8, 8DEC, 9, 10, 11, 110, 12, 13, 14, 140, 1400, 15, 150, 16, 18, , 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 310, 32,
+Agency Name (Dagency.03):
+Is Equal To Portland Fire and Rescue
+Cad Dispatch Notified Date Time:
+Is Equal To Last Month
+Incident Status:
+Is Not Equal To Crew Documentation Finished

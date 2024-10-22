@@ -121,6 +121,9 @@ JOIN [Elite_DWPortland].[DwFire].[Dim_ApparatusResources] dar ON bfar.Dim_Appara
 
 WHERE Fact_Fire.CreatedOn >= '2024-08-19'
 AND Fact_Fire.Agency_shortname = 'portlandfi'
+AND dar.Apparatus_Resource_Actions_Taken_List LIKE '%trauma%'
+
+--- IGNORE THESE UNIT RESPONCES
 AND dar.Apparatus_Resource_Vehicle_Call_Sign not LIKE 'M%'
 AND dar.Apparatus_Resource_Vehicle_Call_Sign not LIKE 'PSR%'
 AND dar.Apparatus_Resource_Vehicle_Call_Sign not LIKE 'LZ%'
