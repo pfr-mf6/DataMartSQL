@@ -1,3 +1,4 @@
+WITH first_query AS (
 SELECT 
     'ePCR' AS report,
     Fact_Incident.CreatedOn AS created_on,
@@ -127,4 +128,28 @@ INNER JOIN [Elite_DWPortland].[DwFire].[Dim_Basic]
 INNER JOIN [Elite_DWPortland].[DwFire].[Dim_Fire] 
     ON Fact_Fire.Dim_Fire_FK = Dim_Fire.Dim_Fire_PK
 WHERE Fact_Fire.CreatedOn >= '2024-08-19'
-AND Fact_Fire.Agency_shortname = 'portlandfi';
+AND Fact_Fire.Agency_shortname = 'portlandfi'
+
+-- Needed when running query locally to diagnose DataMart record completeness
+--ORDER BY alarm_time DESC
+)
+
+
+
+
+SELECT 
+    fq.[Responding Units],
+    fq.alarm_time as time,
+    fq.RP,
+    unit_split.unit AS unit -- Select the extracted unit name
+
+
+
+FROM first_query fq
+CROSS APPLY (
+    SELECT 
+        TRIM(value) AS unit -- Extract individual units from the delimited list
+    FROM STRING_SPLIT(fq.[Responding Units], ',')
+) unit_split
+
+--ORDER BY alarm_time DESC;

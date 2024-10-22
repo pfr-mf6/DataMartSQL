@@ -24,3 +24,12 @@ GROUP BY
 
 ORDER BY
     i.[Incident_Crew_Member_Name_Completing_This_Report];
+
+
+--- See all possible Incident_Status
+-- SELECT DISTINCT 
+--     i.[Incident_Status]
+-- FROM 
+--     [Elite_DWPortland].[DwEms].[Dim_Incident] i
+-- ORDER BY 
+--     i.[Incident_Status];
