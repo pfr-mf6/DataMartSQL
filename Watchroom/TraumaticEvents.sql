@@ -41,7 +41,8 @@
 
 SELECT
 
-
+    dar.CreatedOn as 'created on',
+    dar.ModifiedOn as 'modified on',
     dar.Apparatus_Resource_Vehicle_Call_Sign as 'apparatus',
     dar.Apparatus_Resource_Primary_Action_Taken as 'primary action taken',
     dar.Apparatus_Resource_Narrative as 'app narrative',
@@ -120,7 +121,8 @@ JOIN [Elite_DWPortland].[DwFire].[Bridge_Fire_ApparatusResources] bfar ON Fact_F
 JOIN [Elite_DWPortland].[DwFire].[Dim_ApparatusResources] dar ON bfar.Dim_ApparatusResources_PK = dar.Dim_ApparatusResources_PK
 
 WHERE Fact_Fire.CreatedOn >= '2024-08-19'
-AND Fact_Fire.Agency_shortname = 'portlandfi'
+--AND Fact_Fire.Agency_shortname = 'portlandfi'
+--AND Fact_Fire.Agency_shortname = 'demoagency'
 AND dar.Apparatus_Resource_Actions_Taken_List LIKE '%trauma%'
 
 --- IGNORE THESE UNIT RESPONCES
