@@ -1,6 +1,7 @@
 WITH first_query AS (
 SELECT 
-    'ePCR' AS report,
+    --'ePCR' AS report,
+    'MEDICAL' AS report,
     Fact_Incident.CreatedOn AS created_on,
     Fact_Incident.Incident_Agency_Short_Name as agency,
 
@@ -78,7 +79,8 @@ AND Fact_Incident.Incident_Form_Number = 118
 UNION ALL
 
 SELECT 
-    'NFIRS' AS report,
+    --'NFIRS' AS report,
+    'FIRE' AS report,
     Fact_Fire.CreatedOn AS created_on,
     Fact_Fire.Agency_Shortname as agency,
 
